@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <color name="primaryColor">#f48fb1</color>
+    <color name="primaryLightColor">#ffc1e3</color>
+    <color name="primaryDarkColor">#bf5f82</color>
+    <color name="primaryTextColor">#000000</color>
+
+    <color name="card_color">#FCE4EC</color>
+    <color name="selected_session_card_color">#FCE4EC</color>
+    <color name="unselected_session_card_color">#F2F1F0</color>
+    <color name="black">#FF000000</color>
+    <color name="text_color">#514F4F</color>
+    <color name="white">#FFFFFFFF</color>
+
+    <color name="home_screen_bg">#E9ECF5</color>
+    <color name="list_divider_color">#EFEFEF</color>
+</resources>

@@ -1,0 +1,153 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/home_screen_bg">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/left_view_guideline"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.03" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/right_view_guideline"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.97" />
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/name_til"
+            style="@style/TextFieldStyle"
+            android:hint="@string/volunteer_name"
+            app:layout_constraintEnd_toEndOf="@id/right_view_guideline"
+            app:layout_constraintStart_toStartOf="@id/left_view_guideline"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/name_et"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="text"
+                android:maxLines="1" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/email_til"
+            style="@style/TextFieldStyle"
+            android:hint="@string/volunteer_email"
+            app:layout_constraintEnd_toEndOf="@id/right_view_guideline"
+            app:layout_constraintStart_toStartOf="@id/left_view_guideline"
+            app:layout_constraintTop_toBottomOf="@+id/name_til">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/email_et"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:enabled="false"
+                android:inputType="none"
+                android:maxLines="1"
+                android:textIsSelectable="true" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/phone_til"
+            style="@style/TextFieldStyle"
+            android:hint="@string/volunteer_phone"
+            app:layout_constraintEnd_toEndOf="@id/right_view_guideline"
+            app:layout_constraintStart_toStartOf="@id/left_view_guideline"
+            app:layout_constraintTop_toBottomOf="@id/email_til">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/phone_et"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="phone"
+                android:maxLines="1" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/qualification_til"
+            style="@style/TextFieldStyle"
+            android:hint="@string/volunteer_qualification"
+            app:layout_constraintEnd_toEndOf="@id/right_view_guideline"
+            app:layout_constraintStart_toStartOf="@id/left_view_guideline"
+            app:layout_constraintTop_toBottomOf="@+id/phone_til">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/qualification_et"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="text"
+                android:maxLines="1" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/age_til"
+            style="@style/TextFieldStyle"
+            android:hint="@string/volunteer_age"
+            app:layout_constraintEnd_toEndOf="@id/right_view_guideline"
+            app:layout_constraintStart_toStartOf="@id/left_view_guideline"
+            app:layout_constraintTop_toBottomOf="@id/qualification_til">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/age_et"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="phone"
+                android:maxLines="1" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/about_volunteer_til"
+            style="@style/TextFieldStyle"
+            android:hint="@string/about_volunteer"
+            app:layout_constraintEnd_toEndOf="@id/right_view_guideline"
+            app:layout_constraintStart_toStartOf="@id/left_view_guideline"
+            app:layout_constraintTop_toBottomOf="@+id/age_til">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/about_volunteer_et"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="textPostalAddress"
+                android:maxLines="3" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/social_media_info_til"
+            style="@style/TextFieldStyle"
+            android:hint="@string/volunteer_social_media_info"
+            app:layout_constraintEnd_toEndOf="@id/right_view_guideline"
+            app:layout_constraintStart_toStartOf="@id/left_view_guideline"
+            app:layout_constraintTop_toBottomOf="@+id/about_volunteer_til">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/social_media_info_et"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="textPostalAddress"
+                android:maxLines="3" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <Button
+            android:id="@+id/create_volunteer_btn"
+            style="@style/buttonFilledStyle"
+            android:layout_marginTop="@dimen/dimen_16"
+            android:layout_marginBottom="@dimen/dimen_08"
+            android:text="@string/create_org_btn"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="@id/right_view_guideline"
+            app:layout_constraintStart_toStartOf="@id/left_view_guideline"
+            app:layout_constraintTop_toBottomOf="@id/social_media_info_til" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.core.widget.NestedScrollView>

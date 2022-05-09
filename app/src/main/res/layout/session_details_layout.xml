@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/home_screen_bg">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/left_view_guideline"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_begin="@dimen/dimen_08" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/right_view_guideline"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_end="@dimen/dimen_08" />
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/session_title_til"
+            style="@style/TextFieldStyle"
+
+            android:hint="Session Title/Name *"
+            app:layout_constraintEnd_toEndOf="@id/right_view_guideline"
+            app:layout_constraintStart_toStartOf="@id/left_view_guideline"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:ignore="MissingConstraints">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/session_title_et"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="text"
+                android:maxLines="1" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/session_date_til"
+
+            style="@style/TextFieldStyle"
+            android:hint="Session Date*"
+            app:layout_constraintEnd_toEndOf="@id/right_view_guideline"
+            app:layout_constraintStart_toStartOf="@id/left_view_guideline"
+            app:layout_constraintTop_toBottomOf="@id/session_title_til"
+            tools:ignore="MissingConstraints">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/session_date_et"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="date"
+                android:maxLines="1" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/session_time_til"
+            style="@style/TextFieldStyle"
+            android:hint="Session Time*"
+            app:layout_constraintEnd_toEndOf="@id/right_view_guideline"
+            app:layout_constraintStart_toStartOf="@id/left_view_guideline"
+            app:layout_constraintTop_toBottomOf="@id/session_date_til"
+            tools:ignore="MissingConstraints">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/session_time_et"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="time"
+                android:maxLines="1" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/session_address_til"
+            style="@style/TextFieldStyle"
+            android:hint="Address"
+            app:layout_constraintEnd_toEndOf="@id/right_view_guideline"
+            app:layout_constraintStart_toStartOf="@id/left_view_guideline"
+            app:layout_constraintTop_toBottomOf="@id/session_time_til"
+            tools:ignore="MissingConstraints">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/session_address_et"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:maxLines="3" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/session_other_details_til"
+            style="@style/TextFieldStyle"
+            android:hint="Other Details"
+            app:layout_constraintEnd_toEndOf="@id/right_view_guideline"
+            app:layout_constraintStart_toStartOf="@id/left_view_guideline"
+            app:layout_constraintTop_toBottomOf="@id/session_address_til"
+            tools:ignore="MissingConstraints">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/session_other_details_et"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="textPostalAddress"
+                android:maxLines="3" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <Button
+            android:id="@+id/add_speakers_btn"
+            style="@style/buttonOutLinedStyle"
+            android:text="Add Speakers/Mentors"
+            android:textSize="@dimen/text_size_16"
+            app:layout_constraintEnd_toEndOf="@id/right_view_guideline"
+            app:layout_constraintStart_toStartOf="@id/left_view_guideline"
+            app:layout_constraintTop_toBottomOf="@id/session_other_details_til"
+            tools:ignore="MissingConstraints" />
+
+        <Button
+            android:id="@+id/add_session_btn"
+            style="@style/buttonFilledStyle"
+            android:layout_marginTop="@dimen/dimen_16"
+            android:layout_marginBottom="@dimen/dimen_08"
+            android:text="Add Session to event"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="@id/right_view_guideline"
+            app:layout_constraintStart_toStartOf="@id/left_view_guideline"
+            app:layout_constraintTop_toBottomOf="@id/add_speakers_btn"
+            tools:ignore="MissingConstraints" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.core.widget.NestedScrollView>

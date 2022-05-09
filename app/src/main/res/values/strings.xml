@@ -1,0 +1,47 @@
+<resources>
+    <string name="app_name">Volunteering App</string>
+    <string name="action_bar_title">Vehicles</string>
+    <string name="vehicle_list_car_type_iv_content_desc">Fleet Type</string>
+    <string name="no_vehicles_found_user_msg">No vehicles found.</string>
+
+    <string-array name="event_modes">
+        <item>Physical</item>
+        <item>Virtual</item>
+        <item>Both</item>
+    </string-array>
+
+    <!--    CreateOrganisationFragment-->
+    <string name="organisation_name">Name</string>
+    <string name="organisation_email">Email</string>
+    <string name="organisation_phone">Phone</string>
+    <string name="organisation_city">City</string>
+    <string name="organisation_address">Address</string>
+    <string name="create_org_btn">Create Organisation</string>
+    <string name="org_added_successfully_user_msg">Organisation Added.</string>
+    <string name="org_already_exists_user_msg">Organisation Already exist.</string>
+    <string name="org_unable_to_add_user_msg">Unable to add organisation please try after some time.</string>
+
+    <!--    CreateVolunteerFragment-->
+    <string name="volunteer_name">Name</string>
+    <string name="volunteer_qualification">Qualification</string>
+    <string name="volunteer_phone">Phone</string>
+    <string name="volunteer_email">Email</string>
+    <string name="about_volunteer">About Volunteer</string>
+    <string name="volunteer_age">Age</string>
+    <string name="volunteer_social_media_info">Social Media Info</string>
+    <string name="create_volunteer_btn">Create Volunteer</string>
+    <string name="volunteer_added_successfully_user_msg">Volunteer Added.</string>
+    <string name="volunteer_already_exists_user_msg">Volunteer Already exist.</string>
+    <string name="volunteer_unable_to_add_user_msg">Unable to add Volunteer please try after some time.</string>
+
+<!--    EventsListFragment-->
+    <string name="volunteer_registered_already">Volunteered</string>
+    <string name="volunteer_yet_to_registered">Volunteer</string>
+
+    <string name="dummy_event_title">BrightLight Music Festival</string>
+    <string name="dummy_org_name">Help Age India</string>
+    <string name="dummy_date">17 March 2022</string>
+    <string name="dummy_details">Enable access to your location to see what\'s happening around you, or search by city. The app then gives you dates, times, locations, maps, and similar events. You can also check ticket prices and order those that are available.</string>
+    <string name="dummy_address">ST Stand GaneshPeth Nagpur</string>
+
+</resources>

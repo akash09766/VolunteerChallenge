@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.google.android.material.card.MaterialCardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/event_card_view"
+    style="?attr/materialCardViewStyle"
+    android:layout_width="@dimen/dimen_250"
+    android:layout_height="wrap_content"
+    android:layout_margin="@dimen/dimen_04"
+    app:cardBackgroundColor="@color/primaryColor"
+    app:cardCornerRadius="@dimen/dimen_20"
+    app:cardPreventCornerOverlap="true"
+    app:rippleColor="@color/primaryDarkColor"
+    app:shapeAppearance="?attr/shapeAppearanceMediumComponent">
+
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:padding="@dimen/dimen_10">
+
+        <TextView
+            android:id="@+id/speaker_name"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:maxLines="1"
+            android:text="Medha Patkar"
+            android:textColor="@color/white"
+            android:textSize="@dimen/text_size_14"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/speaker_qualification"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dimen_04"
+            android:maxLines="1"
+            android:text="Social Worker"
+            android:textColor="@color/white"
+            android:textSize="@dimen/text_size_12"
+            android:textStyle="normal"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/speaker_name" />
+
+        <TextView
+            android:id="@+id/about_speaker"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dimen_04"
+            android:layout_marginBottom="@dimen/dimen_04"
+            android:maxLines="5"
+            android:text=" Patkar is an MA in Social Work from Tata Institute of Social Science. She left her position from the faculty as well as her unfinished PhD when she became completely involved in the tribal and peasant communities in Maharashtra, Madhya Pradesh, and Gujarat."
+            android:textColor="@color/white"
+            android:textSize="@dimen/text_size_12"
+            android:textStyle="normal"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/speaker_qualification" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</com.google.android.material.card.MaterialCardView>

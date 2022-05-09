@@ -1,0 +1,56 @@
+{
+  "eventName": "i was searching for and found it.",
+  "OrganisationName": "Good Life",
+  "eventStartDate": "12/04/2022",
+  "eventDetails": "Yoga refreshes your mind and spirit.",
+  "evenMode": "Physical",
+  "targetAudience": "Senior Citizen",
+  "ageGroup": "50-100 years",
+  "noOfSeats": "110",
+  "sessionLanguage": "English/Hindi/Telugu",
+  "address": "52, sagna reddy nagar, madhapur, hyderabad",
+  "isAddressSameForALLSession": true,
+  "phone": "9999999999",
+  "email": "good.life@gmail.com",
+  "sessions": [
+    {
+      "sessionName": "Yoga Beginner classes",
+      "sessionDate": "12 May 2020",
+      "sessionTime": "08:00 AM To 09:00 AM - 01 Hour",
+      "sessionAddress": "52, sagna reddy nagar, madhapur, hyderabad",
+      "otherDetails": "Please bring yoga mat and drinking water",
+      "sessionSpeakers": [
+        {
+          "speakerName": "Ajay varma",
+          "speakerAge": "30",
+          "speakerQualification": "Certified yoga instructor",
+          "socialMediaInfo": "twitter - Avarma007",
+          "aboutSpeaker": "Passionate yoga teacher with over 3+ years exp."
+        },
+        {
+          "speakerName": "Vipul subroto",
+          "speakerAge": "22",
+          "speakerQualification": "yoga instructor intern",
+          "socialMediaInfo": "twitter - vipulSubroto005",
+          "aboutSpeaker": "Passionate yoga teacher with over 3+ years exp."
+        }
+      ]
+    },
+    {
+      "sessionName": "Yoga session 02",
+      "sessionDate": "13 May 2020",
+      "sessionTime": "08:00 AM To 09:00 AM - 01 Hour",
+      "sessionAddress": "52, sagna reddy nagar, madhapur, hyderabad",
+      "otherDetails": "Please bring yoga mat and drinking water",
+      "sessionSpeakers": [
+        {
+          "speakerName": "Ajay varma",
+          "speakerAge": "30",
+          "speakerQualification": "Certified yoga instructor",
+          "socialMediaInfo": "twitter - Avarma007",
+          "aboutSpeaker": "Passionate yoga teacher with over 3+ years exp."
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,204 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/home_screen_bg">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/left_view_guideline"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_begin="@dimen/dimen_08" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/right_view_guideline"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_end="@dimen/dimen_08" />
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/event_name_til"
+            style="@style/TextFieldStyle"
+            android:hint="Event Name"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:ignore="MissingConstraints">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/event_name_et"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/organisation_name_til"
+            style="@style/TextFieldStyle"
+            android:hint="Organisation/NGO Name"
+            app:layout_constraintTop_toBottomOf="@id/event_name_til"
+            tools:ignore="MissingConstraints">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/organisation_name_et"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/event_details_til"
+            style="@style/TextFieldStyle"
+            android:hint="Event Details"
+            app:layout_constraintTop_toBottomOf="@id/organisation_name_til"
+            tools:ignore="MissingConstraints">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/event_details_et"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:maxLines="5"
+                android:minLines="1" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/event_mode_til"
+            style="@style/DropDownTextFieldStyle"
+            android:hint="Event Mode"
+            app:layout_constraintTop_toBottomOf="@id/event_details_til"
+            tools:ignore="MissingConstraints">
+
+            <com.google.android.material.textfield.MaterialAutoCompleteTextView
+                android:id="@+id/event_mode_et"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="none" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/target_audience_til"
+            style="@style/TextFieldStyle"
+            android:hint="Target Audience"
+            app:layout_constraintTop_toBottomOf="@id/event_mode_til"
+            tools:ignore="MissingConstraints">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/target_audience_et"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/age_group_til"
+            style="@style/TextFieldStyle"
+            android:hint="Age Group"
+            app:layout_constraintTop_toBottomOf="@id/target_audience_til"
+            tools:ignore="MissingConstraints">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/age_group_et"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/no_of_seats_til"
+            style="@style/TextFieldStyle"
+            android:hint="Number Of Seats"
+            app:layout_constraintTop_toBottomOf="@id/age_group_til"
+            tools:ignore="MissingConstraints">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/no_of_seats_et"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/session_language_til"
+            style="@style/TextFieldStyle"
+            android:hint="Session Language"
+            app:layout_constraintTop_toBottomOf="@id/no_of_seats_til"
+            tools:ignore="MissingConstraints">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/session_language_et"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/session_address_til"
+            style="@style/TextFieldStyle"
+            android:hint="Address"
+            app:layout_constraintTop_toBottomOf="@id/session_language_til"
+            tools:ignore="MissingConstraints">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/session_address_et"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:maxLines="3" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.checkbox.MaterialCheckBox
+            android:id="@+id/is_default_for_all_sessions"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dimen_08"
+            android:text="Is Above address same for all sessions"
+            app:layout_constraintEnd_toStartOf="@id/right_view_guideline"
+            app:layout_constraintStart_toEndOf="@id/left_view_guideline"
+            app:layout_constraintTop_toBottomOf="@id/session_address_til" />
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/session_phone_til"
+            style="@style/TextFieldStyle"
+            android:hint="Phone"
+            app:layout_constraintTop_toBottomOf="@id/is_default_for_all_sessions"
+            tools:ignore="MissingConstraints">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/session_phone_et"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/session_email_til"
+            style="@style/TextFieldStyle"
+            android:hint="email address"
+            app:layout_constraintTop_toBottomOf="@id/session_phone_til"
+            tools:ignore="MissingConstraints">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/session_email_et"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <Button
+            android:id="@+id/add_session_btn"
+            style="@style/buttonOutLinedStyle"
+            android:text="Add Sessions"
+            android:textSize="@dimen/text_size_16"
+            app:layout_constraintTop_toBottomOf="@id/session_email_til"
+            tools:ignore="MissingConstraints" />
+
+        <Button
+            android:id="@+id/create_event_btn"
+            style="@style/buttonFilledStyle"
+            android:layout_marginTop="@dimen/dimen_16"
+            android:layout_marginBottom="@dimen/dimen_08"
+            android:text="Create Event"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/add_session_btn"
+            tools:ignore="MissingConstraints" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.core.widget.NestedScrollView>

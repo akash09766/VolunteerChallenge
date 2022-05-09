@@ -1,0 +1,305 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/left_view_guideline"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.03" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/right_view_guideline"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.97" />
+
+        <View
+            android:id="@+id/bg"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dimen_200"
+            android:background="@color/primaryColor"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/event_name"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/dimen_08"
+            android:maxLines="2"
+            android:text="@string/dummy_event_title"
+            android:textColor="@color/white"
+            android:textSize="@dimen/text_size_18"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toTopOf="@id/org_name"
+            app:layout_constraintEnd_toEndOf="@id/right_view_guideline"
+            app:layout_constraintStart_toStartOf="@id/org_name" />
+
+        <TextView
+            android:id="@+id/org_name"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/dimen_30"
+            android:layout_marginBottom="@dimen/dimen_30"
+            android:maxLines="1"
+            android:text="Organised by Charity Water"
+            android:textColor="@color/white"
+            android:textSize="@dimen/text_size_12"
+            app:layout_constraintBottom_toBottomOf="@+id/bg"
+            app:layout_constraintEnd_toEndOf="@id/right_view_guideline"
+            app:layout_constraintStart_toEndOf="@id/date_month_component_tv" />
+
+        <TextView
+            android:id="@+id/date_day_component_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:maxLines="1"
+            android:text="26"
+            android:textColor="@color/white"
+            android:textSize="@dimen/text_size_32"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toTopOf="@id/date_month_component_tv"
+            app:layout_constraintEnd_toEndOf="@id/date_month_component_tv"
+            app:layout_constraintStart_toStartOf="@id/date_month_component_tv" />
+
+        <TextView
+            android:id="@+id/date_month_component_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:maxLines="1"
+            android:text="APR"
+            android:textColor="@color/white"
+            android:textSize="@dimen/text_size_22"
+            android:textStyle="normal"
+            app:layout_constraintBottom_toBottomOf="@id/org_name"
+            app:layout_constraintStart_toStartOf="@id/left_view_guideline"
+            app:layout_constraintTop_toTopOf="@id/org_name" />
+
+        <TextView
+            android:id="@+id/voluteer_count"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dimen_08"
+            android:drawableLeft="@drawable/ic_baseline_people_24"
+            android:drawablePadding="@dimen/dimen_09"
+            android:drawableTint="@color/text_color"
+            android:maxLines="1"
+            android:text="200 Volunteered"
+            android:textColor="@color/text_color"
+            android:textSize="@dimen/text_size_14"
+            app:layout_constraintEnd_toEndOf="@id/right_view_guideline"
+            app:layout_constraintStart_toStartOf="@id/left_view_guideline"
+            app:layout_constraintTop_toBottomOf="@id/bg" />
+
+        <TextView
+            android:id="@+id/event_address"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dimen_08"
+            android:drawableLeft="@drawable/ic_baseline_location"
+            android:drawablePadding="@dimen/dimen_09"
+            android:drawableTint="@color/text_color"
+            android:maxLines="3"
+            android:text="@string/dummy_address"
+            android:textColor="@color/text_color"
+            android:textSize="@dimen/text_size_14"
+            app:layout_constraintEnd_toEndOf="@id/right_view_guideline"
+            app:layout_constraintStart_toStartOf="@id/left_view_guideline"
+            app:layout_constraintTop_toBottomOf="@id/voluteer_count" />
+
+        <TextView
+            android:id="@+id/language"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dimen_08"
+            android:drawableLeft="@drawable/ic_baseline_label"
+            android:drawablePadding="@dimen/dimen_09"
+            android:drawableTint="@color/text_color"
+            android:maxLines="1"
+            android:text="Hindi/English"
+            android:textColor="@color/text_color"
+            android:textSize="@dimen/text_size_14"
+            app:layout_constraintEnd_toEndOf="@id/right_view_guideline"
+            app:layout_constraintStart_toStartOf="@id/left_view_guideline"
+            app:layout_constraintTop_toBottomOf="@+id/event_address" />
+
+        <TextView
+            android:id="@+id/event_details_title"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dimen_16"
+            android:maxLines="2"
+            android:text="About Event"
+            android:textColor="@color/text_color"
+            android:textSize="@dimen/text_size_14"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="@id/right_view_guideline"
+            app:layout_constraintStart_toStartOf="@id/left_view_guideline"
+            app:layout_constraintTop_toBottomOf="@+id/language" />
+
+        <TextView
+            android:id="@+id/event_details"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="@string/dummy_details"
+            android:textColor="@color/text_color"
+            android:textSize="@dimen/text_size_14"
+            android:textStyle="normal"
+            app:layout_constraintEnd_toEndOf="@id/right_view_guideline"
+            app:layout_constraintStart_toStartOf="@id/left_view_guideline"
+            app:layout_constraintTop_toBottomOf="@+id/event_details_title" />
+
+
+        <TextView
+            android:id="@+id/event_mode_title"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dimen_16"
+            android:maxLines="2"
+            android:text="Event Mode"
+            android:textColor="@color/text_color"
+            android:textSize="@dimen/text_size_14"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="@id/right_view_guideline"
+            app:layout_constraintStart_toStartOf="@id/left_view_guideline"
+            app:layout_constraintTop_toBottomOf="@+id/event_details" />
+
+        <TextView
+            android:id="@+id/event_mode"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="Physical/Online"
+            android:textColor="@color/text_color"
+            android:textSize="@dimen/text_size_14"
+            android:textStyle="normal"
+            app:layout_constraintEnd_toEndOf="@id/right_view_guideline"
+            app:layout_constraintStart_toStartOf="@id/left_view_guideline"
+            app:layout_constraintTop_toBottomOf="@+id/event_mode_title" />
+
+        <View
+            android:id="@+id/divider_01"
+            android:layout_width="0dp"
+            android:layout_height="1dp"
+            android:layout_marginTop="@dimen/dimen_08"
+            android:background="@drawable/list_line_divider"
+            app:layout_constraintEnd_toEndOf="@id/right_view_guideline"
+            app:layout_constraintStart_toStartOf="@id/left_view_guideline"
+            app:layout_constraintTop_toBottomOf="@+id/event_mode" />
+
+        <TextView
+            android:id="@+id/session_list_title"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dimen_16"
+            android:maxLines="2"
+            android:text="Sessions"
+            android:textColor="@color/text_color"
+            android:textSize="@dimen/text_size_14"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="@id/right_view_guideline"
+            app:layout_constraintStart_toStartOf="@id/left_view_guideline"
+            app:layout_constraintTop_toBottomOf="@+id/divider_01" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/session_list"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintEnd_toEndOf="@id/right_view_guideline"
+            app:layout_constraintStart_toStartOf="@id/left_view_guideline"
+            app:layout_constraintTop_toBottomOf="@id/session_list_title"
+            tools:listitem="@layout/session_list_item" />
+
+        <TextView
+            android:id="@+id/session_name"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dimen_16"
+            android:maxLines="2"
+            android:text="Save Water For Next generation"
+            android:textColor="@color/text_color"
+            android:textSize="@dimen/text_size_18"
+
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="@id/right_view_guideline"
+            app:layout_constraintStart_toStartOf="@id/left_view_guideline"
+            app:layout_constraintTop_toBottomOf="@+id/session_list" />
+
+        <TextView
+            android:id="@+id/session_date_time"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dimen_08"
+            android:text="22 Apr at 10:00 AM"
+            android:textColor="@color/text_color"
+            android:textSize="@dimen/text_size_14"
+            android:textStyle="normal"
+            app:layout_constraintEnd_toEndOf="@id/right_view_guideline"
+            app:layout_constraintStart_toStartOf="@id/left_view_guideline"
+            app:layout_constraintTop_toBottomOf="@+id/session_name" />
+
+        <TextView
+            android:id="@+id/session_address"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dimen_08"
+            android:maxLines="3"
+            android:text="@string/dummy_address"
+            android:textColor="@color/text_color"
+            android:textSize="@dimen/text_size_14"
+            app:layout_constraintEnd_toEndOf="@id/right_view_guideline"
+            app:layout_constraintStart_toStartOf="@id/left_view_guideline"
+            app:layout_constraintTop_toBottomOf="@id/session_date_time" />
+
+        <TextView
+            android:id="@+id/session_about"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dimen_08"
+            android:text="An ex-cricketer struggling to make ends meet, wants to fulfill his child`s wish of getting a Jersey but in the process comes face to face with his heroic past and is forced to decide if he will rise to the occasion or continue to live a life as a loser?"
+            android:textColor="@color/text_color"
+            android:textSize="@dimen/text_size_14"
+            android:textStyle="normal"
+            app:layout_constraintEnd_toEndOf="@id/right_view_guideline"
+            app:layout_constraintStart_toStartOf="@id/left_view_guideline"
+            app:layout_constraintTop_toBottomOf="@+id/session_address" />
+
+        <TextView
+            android:id="@+id/session_speaker"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dimen_16"
+            android:maxLines="2"
+            android:text="Sessions Speakers"
+            android:textColor="@color/text_color"
+            android:textSize="@dimen/text_size_14"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="@id/right_view_guideline"
+            app:layout_constraintStart_toStartOf="@id/left_view_guideline"
+            app:layout_constraintTop_toBottomOf="@+id/session_about" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/session_speaker_list"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintEnd_toEndOf="@id/right_view_guideline"
+            app:layout_constraintStart_toStartOf="@id/left_view_guideline"
+            app:layout_constraintTop_toBottomOf="@id/session_speaker"
+            tools:listitem="@layout/speaker_list_item" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.core.widget.NestedScrollView>

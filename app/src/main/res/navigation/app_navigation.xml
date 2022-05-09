@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/app_navigation"
+    app:startDestination="@id/splashScreenFragment">
+    <fragment
+        android:id="@+id/createEventFragment"
+        android:name="com.skylight.android.volunteering.app.fragments.CreateEventFragment"
+        android:label="CreateEventFragment">
+        <action
+            android:id="@+id/action_createEventFragment_to_createSessionFragment"
+            app:destination="@id/createSessionFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/createSessionFragment"
+        android:name="com.skylight.android.volunteering.app.fragments.CreateSessionFragment"
+        android:label="CreateSessionFragment">
+        <action
+            android:id="@+id/action_createSessionFragment_to_addSpeakerFragment"
+            app:destination="@id/addSpeakerFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/addSpeakerFragment"
+        android:name="com.skylight.android.volunteering.app.fragments.AddSpeakerFragment"
+        android:label="AddSpeakerFragment" />
+    <fragment
+        android:id="@+id/eventsListFragment"
+        android:name="com.skylight.android.volunteering.app.fragments.EventsListFragment"
+        android:label="EventsListFragment" >
+        <action
+            android:id="@+id/action_eventsListFragment_to_eventDetailsFragment"
+            app:destination="@id/eventDetailsFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/dummyUserChooserFragment"
+        android:name="com.skylight.android.volunteering.app.fragments.DummyUserChooserFragment"
+        android:label="DummyUserChooserFragment">
+        <action
+            android:id="@+id/action_dummyUserChooserFragment_to_eventsListFragment"
+            app:destination="@id/eventsListFragment" />
+        <action
+            android:id="@+id/action_dummyUserChooserFragment_to_createEventFragment"
+            app:destination="@id/createEventFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/loginFragment"
+        android:name="com.skylight.android.volunteering.app.fragments.LoginFragment"
+        android:label="LoginFragment">
+        <action
+            android:id="@+id/action_loginFragment_to_eventsListFragment"
+            app:destination="@id/eventsListFragment"
+            app:popUpTo="@id/app_navigation"
+            app:popUpToInclusive="true" />
+        <action
+            android:id="@+id/action_loginFragment_to_adminHomeScreenFragment"
+            app:destination="@id/adminHomeScreenFragment"
+            app:popUpTo="@id/app_navigation"
+            app:popUpToInclusive="true" />
+        <action
+            android:id="@+id/action_loginFragment_to_createVolunteerFragment"
+            app:destination="@id/createVolunteerFragment"
+            app:popUpTo="@id/app_navigation"
+            app:popUpToInclusive="true" />
+    </fragment>
+    <fragment
+        android:id="@+id/adminHomeScreenFragment"
+        android:name="com.skylight.android.volunteering.app.fragments.AdminHomeScreenFragment"
+        android:label="AdminHomeScreenFragment">
+        <action
+            android:id="@+id/action_adminHomeScreenFragment_to_createEventFragment"
+            app:destination="@id/createEventFragment" />
+        <action
+            android:id="@+id/action_adminHomeScreenFragment_to_createOrganisationFragment"
+            app:destination="@id/createOrganisationFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/splashScreenFragment"
+        android:name="com.skylight.android.volunteering.app.fragments.SplashScreenFragment"
+        android:label="SplashScreenFragment">
+        <action
+            android:id="@+id/action_splashScreenFragment_to_loginFragment"
+            app:destination="@id/loginFragment"
+            app:popUpTo="@id/app_navigation"
+            app:popUpToInclusive="true" />
+        <action
+            android:id="@+id/action_splashScreenFragment_to_adminHomeScreenFragment"
+            app:destination="@id/adminHomeScreenFragment"
+            app:popUpTo="@id/splashScreenFragment"
+            app:popUpToInclusive="true" />
+        <action
+            android:id="@+id/action_splashScreenFragment_to_eventsListFragment"
+            app:destination="@id/eventsListFragment"
+            app:popUpTo="@id/splashScreenFragment"
+            app:popUpToInclusive="true" />
+    </fragment>
+    <fragment
+        android:id="@+id/createVolunteerFragment"
+        android:name="com.skylight.android.volunteering.app.fragments.CreateVolunteerFragment"
+        android:label="CreateVolunteerFragment">
+        <argument
+            android:name="userEmailId"
+            app:argType="string" />
+        <action
+            android:id="@+id/action_createVolunteerFragment_to_eventsListFragment"
+            app:destination="@id/eventsListFragment"
+            app:popUpTo="@id/app_navigation"
+            app:popUpToInclusive="true" />
+    </fragment>
+    <fragment
+        android:id="@+id/createOrganisationFragment"
+        android:name="com.skylight.android.volunteering.app.fragments.CreateOrganisationFragment"
+        android:label="CreateOrganisationFragment" />
+    <fragment
+        android:id="@+id/eventDetailsFragment"
+        android:name="com.skylight.android.volunteering.app.fragments.EventDetailsFragment"
+        android:label="EventDetailsFragment" />
+</navigation>

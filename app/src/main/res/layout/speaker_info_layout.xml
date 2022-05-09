@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/home_screen_bg">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/left_view_guideline"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_begin="@dimen/dimen_08" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/right_view_guideline"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_end="@dimen/dimen_08" />
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/speaker_name_til"
+            style="@style/TextFieldStyle"
+            android:hint="Speaker/Mentor Name*"
+            app:layout_constraintEnd_toEndOf="@id/right_view_guideline"
+            app:layout_constraintStart_toStartOf="@id/left_view_guideline"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:ignore="MissingConstraints">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/speaker_name_et"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="text"
+                android:maxLines="1" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/speaker_age_til"
+            style="@style/TextFieldStyle"
+            android:hint="Age*"
+            app:layout_constraintEnd_toEndOf="@id/right_view_guideline"
+            app:layout_constraintStart_toStartOf="@id/left_view_guideline"
+            app:layout_constraintTop_toBottomOf="@id/speaker_name_til"
+            tools:ignore="MissingConstraints">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/speaker_age_et"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="numberDecimal"
+                android:maxLines="1" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/speaker_qualification_til"
+            style="@style/TextFieldStyle"
+            android:hint="Qualification*"
+            app:layout_constraintEnd_toEndOf="@id/right_view_guideline"
+            app:layout_constraintStart_toStartOf="@id/left_view_guideline"
+            app:layout_constraintTop_toBottomOf="@id/speaker_age_til"
+            tools:ignore="MissingConstraints">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/speaker_qualification_et"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="text"
+                android:maxLines="1" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/speaker_social_media_username_til"
+            style="@style/TextFieldStyle"
+            android:hint="Social Media username/link"
+            app:layout_constraintEnd_toEndOf="@id/right_view_guideline"
+            app:layout_constraintStart_toStartOf="@id/left_view_guideline"
+            app:layout_constraintTop_toBottomOf="@id/speaker_qualification_til"
+            tools:ignore="MissingConstraints">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/speaker_social_media_username_et"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="text"
+                android:maxLines="1" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/about_speaker_til"
+            style="@style/TextFieldStyle"
+            android:hint="About speaker"
+            app:layout_constraintEnd_toEndOf="@id/right_view_guideline"
+            app:layout_constraintStart_toStartOf="@id/left_view_guideline"
+            app:layout_constraintTop_toBottomOf="@id/speaker_social_media_username_til"
+            tools:ignore="MissingConstraints">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/about_speaker_et"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="textPostalAddress"
+                android:maxLines="5" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <Button
+            android:id="@+id/add_speaker_btn"
+            style="@style/buttonFilledStyle"
+            android:layout_marginTop="@dimen/dimen_16"
+            android:layout_marginBottom="@dimen/dimen_08"
+            android:text="Add Speaker/Mentor"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="@id/right_view_guideline"
+            app:layout_constraintStart_toStartOf="@id/left_view_guideline"
+            app:layout_constraintTop_toBottomOf="@id/about_speaker_til"
+            tools:ignore="MissingConstraints" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.core.widget.NestedScrollView>
