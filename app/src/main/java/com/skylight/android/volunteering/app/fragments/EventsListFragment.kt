@@ -4,6 +4,7 @@ import android.annotation.SuppressLint
 import android.os.Bundle
 import android.util.Log
 import android.view.View
+import androidx.appcompat.app.AppCompatActivity
 import androidx.navigation.Navigation
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.google.firebase.firestore.Transaction
@@ -28,7 +29,7 @@ import timber.log.Timber
  * Created by Akash Wangalwar.(Github:akash09766) on 04-04-2022 at 13:56.
  */
 class EventsListFragment : BaseFragment(R.layout.events_list_screen_layout),
-    ListItemClickListener<Int> {
+    ListItemClickListener<EventInfo> {
 
     private lateinit var loggedInVoluteerEmailId: String
 
@@ -74,7 +75,7 @@ class EventsListFragment : BaseFragment(R.layout.events_list_screen_layout),
                 for (document in documents) {
                     orgList.add(document.toObject(OrganisationInfo::class.java))
                 }
-
+                eventList.clear()
                 orgList.forEach { orgItem ->
                     if (orgItem?.events_list.isNullOrEmpty().not()) {
                         eventList.addAll(orgItem?.events_list!!)
@@ -109,11 +110,11 @@ class EventsListFragment : BaseFragment(R.layout.events_list_screen_layout),
             }
     }
 
-    override fun onItemClick(position: Int) {
-        Timber.d("$TAG onItemClick() called with: position = $position")
+    override fun onItemClick(item: EventInfo) {
+        Timber.d("$TAG onItemClick() called with: item = $item")
 
         Navigation.findNavController(binding.root)
-            .navigate(EventsListFragmentDirections.actionEventsListFragmentToEventDetailsFragment())
+            .navigate(EventsListFragmentDirections.actionEventsListFragmentToEventDetailsFragment(item))
 //        getLoggedInVolunteerData(position)
     }
 
@@ -182,5 +183,10 @@ class EventsListFragment : BaseFragment(R.layout.events_list_screen_layout),
         eventListAdapter.getData()[selectedItemPosition]?.isVolunteeredForThisEvent = true
         eventListAdapter.notifyItemChanged(selectedItemPosition)
         Timber.d("$TAG refreshList()  eventList -> ${Gson().toJson(eventList)}")
+    }
+
+    override fun onResume() {
+        super.onResume()
+        (activity as AppCompatActivity).supportActionBar?.title = "Upcoming Events"
     }
 }

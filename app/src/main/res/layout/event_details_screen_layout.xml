@@ -216,6 +216,7 @@
             android:id="@+id/session_list"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dimen_04"
             android:orientation="horizontal"
             app:layout_constraintEnd_toEndOf="@id/right_view_guideline"
             app:layout_constraintStart_toStartOf="@id/left_view_guideline"
@@ -299,6 +300,17 @@
             app:layout_constraintStart_toStartOf="@id/left_view_guideline"
             app:layout_constraintTop_toBottomOf="@id/session_speaker"
             tools:listitem="@layout/speaker_list_item" />
+
+        <Button
+            android:id="@+id/volunteer_btn"
+            style="@style/buttonFilledStyle"
+            android:layout_marginTop="@dimen/dimen_16"
+            android:layout_marginBottom="@dimen/dimen_08"
+            android:text="Volunteer for this event"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="@id/right_view_guideline"
+            app:layout_constraintStart_toStartOf="@id/left_view_guideline"
+            app:layout_constraintTop_toBottomOf="@id/session_speaker_list" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 

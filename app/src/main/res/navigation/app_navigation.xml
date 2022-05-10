@@ -114,5 +114,9 @@
     <fragment
         android:id="@+id/eventDetailsFragment"
         android:name="com.skylight.android.volunteering.app.fragments.EventDetailsFragment"
-        android:label="EventDetailsFragment" />
+        android:label="EventDetailsFragment" >
+        <argument
+            android:name="eventInfoDetails"
+            app:argType="com.skylight.android.volunteering.app.model.event.EventInfo" />
+    </fragment>
 </navigation>

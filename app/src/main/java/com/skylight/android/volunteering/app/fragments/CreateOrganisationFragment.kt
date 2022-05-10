@@ -3,6 +3,7 @@ package com.skylight.android.volunteering.app.fragments
 import android.annotation.SuppressLint
 import android.os.Bundle
 import android.view.View
+import androidx.appcompat.app.AppCompatActivity
 import androidx.navigation.Navigation
 import com.google.firebase.firestore.ktx.firestore
 import com.google.firebase.ktx.Firebase
@@ -86,5 +87,10 @@ class CreateOrganisationFragment : BaseFragment(R.layout.create_organisation_fra
             )
             Timber.d("$TAG  onViewCreated() addOnFailureListener : ${it.message}")
         }
+    }
+
+    override fun onResume() {
+        super.onResume()
+        (activity as AppCompatActivity).supportActionBar?.title = "Add Organisation"
     }
 }

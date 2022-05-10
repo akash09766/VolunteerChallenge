@@ -4,9 +4,11 @@ import android.annotation.SuppressLint
 import android.os.Bundle
 import android.view.View
 import android.widget.ArrayAdapter
+import androidx.appcompat.app.AppCompatActivity
 import androidx.navigation.Navigation
 import com.google.firebase.firestore.Transaction
 import com.google.firebase.firestore.ktx.firestore
+import com.google.firebase.installations.Utils
 import com.google.firebase.ktx.Firebase
 import com.google.gson.Gson
 import com.skylight.android.volunteering.R
@@ -45,6 +47,10 @@ class CreateEventFragment : BaseFragment(R.layout.create_event_fragment_layout) 
         super.onViewCreated(view, savedInstanceState)
 
         setViewToView()
+
+        binding.eventStartDateEt.setOnClickListener {
+                showDatePickerDialog(binding.eventStartDateEt)
+        }
 
         binding.createEventBtn.setOnClickListener {
                    val eventData: EventInfo = if ((dataCache.get(DataHolderKeys.Events.name)) == null) {
@@ -170,5 +176,10 @@ class CreateEventFragment : BaseFragment(R.layout.create_event_fragment_layout) 
         )
 
         binding.organisationNameEt.setAdapter(adapter)
+    }
+
+    override fun onResume() {
+        super.onResume()
+        (activity as AppCompatActivity).supportActionBar?.title = "Create Event"
     }
 }

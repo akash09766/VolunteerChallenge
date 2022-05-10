@@ -2,6 +2,7 @@ package com.skylight.android.volunteering.app.fragments
 
 import android.os.Bundle
 import android.view.View
+import androidx.appcompat.app.AppCompatActivity
 import com.skylight.android.volunteering.R
 import com.skylight.android.volunteering.app.model.event.SessionSpeakersItem
 import com.skylight.android.volunteering.app.util.MConstants
@@ -42,5 +43,10 @@ class AddSpeakerFragment : BaseFragment(R.layout.speaker_info_layout) {
 
             setBackStackData(MConstants.DataHolderKeys.SPEAKER_DATA.name, speakersItem)
         }
+    }
+
+    override fun onResume() {
+        super.onResume()
+        (activity as AppCompatActivity).supportActionBar?.title = "Add Speaker"
     }
 }

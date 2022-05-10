@@ -16,7 +16,7 @@ import com.skylight.android.volunteering.databinding.EventListRowItemBinding
  */
 class EventListAdapter(
     private var itemList: ArrayList<EventInfo?>,
-    private val listener: ListItemClickListener<Int>
+    private val listener: ListItemClickListener<EventInfo>
 ) :
     RecyclerView.Adapter<EventListAdapter.ItemViewHolder>() {
 
@@ -50,7 +50,7 @@ class EventListAdapter(
 
     class ItemViewHolder(private val binding: EventListRowItemBinding) :
         RecyclerView.ViewHolder(binding.root) {
-        fun bind(eventData: EventInfo, listener: ListItemClickListener<Int>, position: Int) {
+        fun bind(eventData: EventInfo, listener: ListItemClickListener<EventInfo>, position: Int) {
             binding.eventName.text = eventData.eventName
             binding.orgName.text = eventData.organisationName
 //            binding.eventDate.text = eventData.eventStartDate
@@ -58,7 +58,7 @@ class EventListAdapter(
 //            binding.langTv.text = eventData.sessionLanguage
 //            binding.sessionCountTv.text = eventData.sessions?.size.toString().plus(" Session")
             binding.root.setOnClickListener {
-                listener.onItemClick(position)
+                listener.onItemClick(eventData)
             }
 
             if (eventData.isVolunteeredForThisEvent) {

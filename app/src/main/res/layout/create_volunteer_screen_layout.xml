@@ -142,7 +142,7 @@
             style="@style/buttonFilledStyle"
             android:layout_marginTop="@dimen/dimen_16"
             android:layout_marginBottom="@dimen/dimen_08"
-            android:text="@string/create_org_btn"
+            android:text="Sign Up as Volunteer"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="@id/right_view_guideline"
             app:layout_constraintStart_toStartOf="@id/left_view_guideline"

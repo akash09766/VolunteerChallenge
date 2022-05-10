@@ -36,8 +36,11 @@ class LoginFragment : BaseFragment(R.layout.login_fragment_layout) {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        binding.loginBtn.setOnClickListener {
+        binding.volunteerBtn.setOnClickListener {
             performLogin(MConstants.LOGGED_IN_USER_EMAIL_ID)
+        }
+        binding.adminBtn.setOnClickListener {
+            performLogin(MConstants.LOGGED_IN_ADMIN_EMAIL_ID)
         }
     }
 

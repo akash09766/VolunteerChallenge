@@ -6,22 +6,25 @@ import androidx.core.content.ContextCompat
 import androidx.recyclerview.widget.RecyclerView
 import com.skylight.android.volunteering.R
 import com.skylight.android.volunteering.app.listerners.ListItemClickListener
-import com.skylight.android.volunteering.app.model.PoiListItem
-import com.skylight.android.volunteering.app.util.MConstants.FleetType.TAXI
 import com.skylight.android.volunteering.databinding.SessionListItemBinding
-import com.skylight.android.volunteering.databinding.VehicleListRowBinding
 
 /**
  * Created by Akash Wangalwar.(Github:akash09766) on 22-04-2022 at 21:12.
  */
 class SessionNumberListAdapter(
     private val sessionCount: Int,
-    private val selectedItem: Int = 0
+    private var selectedItem: Int = 0,
+    private val listener: ListItemClickListener<Int>
+
 ) :
     RecyclerView.Adapter<SessionNumberListAdapter.ItemViewHolder>() {
 
+    fun setSelectedItem(selectedItem: Int){
+        this.selectedItem = selectedItem
+    }
+
     override fun onBindViewHolder(holder: ItemViewHolder, position: Int) {
-        holder.bind(position, position == selectedItem)
+        holder.bind(position, position == selectedItem, listener = listener)
     }
 
     override fun onCreateViewHolder(
@@ -39,8 +42,11 @@ class SessionNumberListAdapter(
 
     class ItemViewHolder(private val binding: SessionListItemBinding) :
         RecyclerView.ViewHolder(binding.root) {
-        fun bind(position: Int, isSelected: Boolean) {
+        fun bind(position: Int, isSelected: Boolean, listener : ListItemClickListener<Int>) {
 
+            binding.sessionNumParentView.setOnClickListener {
+                listener.onItemClick(position)
+            }
             binding.sessionNum.text = (position + 1).toString()
 
             if (isSelected) {

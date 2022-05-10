@@ -2,6 +2,7 @@ package com.skylight.android.volunteering.app.fragments
 
 import android.os.Bundle
 import android.view.View
+import androidx.appcompat.app.AppCompatActivity
 import androidx.navigation.Navigation
 import com.skylight.android.volunteering.R
 import com.skylight.android.volunteering.app.model.event.EventInfo
@@ -33,6 +34,15 @@ class CreateSessionFragment : BaseFragment(R.layout.session_details_layout) {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+
+
+        binding.sessionDateEt.setOnClickListener {
+            showDatePickerDialog(binding.sessionDateEt)
+        }
+
+        binding.sessionTimeEt.setOnClickListener {
+            showTimePickerDialog(binding.sessionTimeEt)
+        }
 
         binding.addSessionBtn.setOnClickListener {
 //            val data = (dataCache.get(DataHolderKeys.Events.name) as EventInfo) ?: EventInfo()
@@ -77,5 +87,11 @@ class CreateSessionFragment : BaseFragment(R.layout.session_details_layout) {
 
     private fun closeThisFragment() {
         Navigation.findNavController(binding.addSessionBtn).popBackStack()
+    }
+
+
+    override fun onResume() {
+        super.onResume()
+        (activity as AppCompatActivity).supportActionBar?.title = "Add Session"
     }
 }

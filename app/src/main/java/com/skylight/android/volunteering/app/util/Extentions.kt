@@ -7,6 +7,7 @@ import com.google.firebase.firestore.CollectionReference
 import com.google.firebase.firestore.FirebaseFirestore
 import com.google.firebase.firestore.QuerySnapshot
 import com.google.firebase.ktx.Firebase
+import java.text.SimpleDateFormat
 import java.util.*
 
 /**
@@ -27,6 +28,8 @@ fun GoogleMap.isNightTime(): Boolean {
     val currentTime = calendar.time
     return systemTime > currentTime
 }
+
+fun Calendar.formatDate() : String = SimpleDateFormat(MConstants.DATE_DISPLAY_FORMAT).format(this.time)
 
 //val Firebase.QuerySnapshot: Task<QuerySnapshot>
 //    get() = FirebaseFirestore.getInstance().collection(MConstants.DataHolderKeys.Events.name).whereEqualTo(MediaStore.MediaColumns.DOCUMENT_ID, "1111").get()

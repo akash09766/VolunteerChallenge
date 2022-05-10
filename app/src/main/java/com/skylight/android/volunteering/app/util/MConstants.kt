@@ -61,7 +61,8 @@ object MConstants {
     const val ORG_ID = "Organisation_2"
 //    const val event_to_be_search_and_register = "b2b11137-8adc-440b-8729-8a46faa0fad5"
 //    const val volunteer_user_id = "1649145260226wangalwar.akash@gmail.com"
-    const val LOGGED_IN_USER_EMAIL_ID = "akashwangalwar@dbs.com"//"wangalwar.akash@gmail.com"
+    const val LOGGED_IN_USER_EMAIL_ID = "arjun.das@dbs.com"//"wangalwar.akash@gmail.com"
+    const val LOGGED_IN_ADMIN_EMAIL_ID = "wangalwar.akash@gmail.com"
 
     const val ADD_ORGANISATION = 0
     const val CREATE_EVENT = 1
@@ -69,4 +70,6 @@ object MConstants {
     const val VOLUNTEER = 3
     const val EVENT = 4
     const val ORGANISATIONS = 5
+
+    const val DATE_DISPLAY_FORMAT = "dd-MM-yyyy"
 }
