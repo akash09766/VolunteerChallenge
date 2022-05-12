@@ -45,5 +45,6 @@
     <string name="dummy_date">17 March 2022</string>
     <string name="dummy_details">Enable access to your location to see what\'s happening around you, or search by city. The app then gives you dates, times, locations, maps, and similar events. You can also check ticket prices and order those that are available.</string>
     <string name="dummy_address">ST Stand GaneshPeth Nagpur</string>
+    <string name="no_events_user_msg">No Events have been created yet.</string>
 
 </resources>

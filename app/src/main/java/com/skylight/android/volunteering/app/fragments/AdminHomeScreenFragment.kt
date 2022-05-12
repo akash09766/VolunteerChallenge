@@ -1,24 +1,22 @@
 package com.skylight.android.volunteering.app.fragments
 
 import android.annotation.SuppressLint
+import android.content.Intent
 import android.os.Bundle
-import android.util.Log
+import android.view.Menu
+import android.view.MenuInflater
+import android.view.MenuItem
 import android.view.View
 import androidx.appcompat.app.AppCompatActivity
+import androidx.core.content.IntentCompat
+import androidx.core.view.iterator
 import androidx.navigation.Navigation
 import androidx.recyclerview.widget.GridLayoutManager
-import com.google.firebase.Timestamp
-import com.google.firebase.firestore.ktx.firestore
-import com.google.firebase.ktx.Firebase
 import com.skylight.android.volunteering.R
+import com.skylight.android.volunteering.app.activities.MainActivity
 import com.skylight.android.volunteering.app.adapter.AdminHomeListAdapter
 import com.skylight.android.volunteering.app.listerners.ListItemClickListener
-import com.skylight.android.volunteering.app.model.event.AdminInfo
-import com.skylight.android.volunteering.app.model.event.AdminList
-import com.skylight.android.volunteering.app.model.event.OrganisationInfo
-import com.skylight.android.volunteering.app.model.event.VolunteerItem
 import com.skylight.android.volunteering.app.util.ItemOffsetDecoration
-import com.skylight.android.volunteering.app.util.MConstants
 import com.skylight.android.volunteering.app.util.MConstants.ADD_ADMIN
 import com.skylight.android.volunteering.app.util.MConstants.ADD_ORGANISATION
 import com.skylight.android.volunteering.app.util.MConstants.CREATE_EVENT
@@ -30,10 +28,9 @@ import com.skylight.android.volunteering.core.ui.base.BaseFragment
 import com.skylight.android.volunteering.core.utils.getViewModel
 import com.skylight.android.volunteering.core.utils.viewBinding
 import com.skylight.android.volunteering.databinding.AdminHomeScreenLayoutBinding
-import com.skylight.android.volunteering.databinding.DummyUserChooserLayoutBinding
 import timber.log.Timber
 import java.util.*
-import kotlin.collections.ArrayList
+
 
 /**
  * Created by Akash Wangalwar.(Github:akash09766) on 04-04-2022 at 13:56.
@@ -58,7 +55,7 @@ class AdminHomeScreenFragment : BaseFragment(R.layout.admin_home_screen_layout),
     @SuppressLint("TimberArgCount")
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-
+        setHasOptionsMenu(true)
         setDataToViews()
     }
 
@@ -109,5 +106,30 @@ class AdminHomeScreenFragment : BaseFragment(R.layout.admin_home_screen_layout),
     override fun onResume() {
         super.onResume()
         (activity as AppCompatActivity).supportActionBar?.title = "Home"
+    }
+
+    override fun onCreateOptionsMenu(menu: Menu, inflater: MenuInflater) {
+        inflater.inflate(R.menu.home_menu,menu)
+    }
+
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+        return if (item.itemId == R.id.logout) {
+            performLogout()
+            true
+        } else {
+            super.onOptionsItemSelected(item)
+        }
+    }
+
+    private fun performLogout() {
+        prefs.clearPrefs()
+        restartApp()
+    }
+
+    private fun restartApp() {
+        val mainIntent = Intent(requireActivity(),MainActivity::class.java)
+        mainIntent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK)
+        requireActivity().applicationContext.startActivity(mainIntent)
+        activity?.finish()
     }
 }

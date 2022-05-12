@@ -1,8 +1,12 @@
 package com.skylight.android.volunteering.app.fragments
 
 import android.annotation.SuppressLint
+import android.content.Intent
 import android.os.Bundle
 import android.util.Log
+import android.view.Menu
+import android.view.MenuInflater
+import android.view.MenuItem
 import android.view.View
 import androidx.appcompat.app.AppCompatActivity
 import androidx.navigation.Navigation
@@ -12,6 +16,7 @@ import com.google.firebase.firestore.ktx.firestore
 import com.google.firebase.ktx.Firebase
 import com.google.gson.Gson
 import com.skylight.android.volunteering.R
+import com.skylight.android.volunteering.app.activities.MainActivity
 import com.skylight.android.volunteering.app.adapter.EventListAdapter
 import com.skylight.android.volunteering.app.listerners.ListItemClickListener
 import com.skylight.android.volunteering.app.model.event.EventInfo
@@ -21,7 +26,9 @@ import com.skylight.android.volunteering.app.util.MConstants.DataHolderKeys
 import com.skylight.android.volunteering.app.viewModels.HomeScreenViewModel
 import com.skylight.android.volunteering.core.ui.base.BaseFragment
 import com.skylight.android.volunteering.core.utils.getViewModel
+import com.skylight.android.volunteering.core.utils.gone
 import com.skylight.android.volunteering.core.utils.viewBinding
+import com.skylight.android.volunteering.core.utils.visible
 import com.skylight.android.volunteering.databinding.EventsListScreenLayoutBinding
 import timber.log.Timber
 
@@ -47,6 +54,7 @@ class EventsListFragment : BaseFragment(R.layout.events_list_screen_layout),
     @SuppressLint("TimberArgCount")
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+        setHasOptionsMenu(true)
         loggedInVoluteerEmailId = prefs.getVolunteerUserData()?.volunteerEmail!!
 
         setDataToRecylerview()
@@ -96,11 +104,19 @@ class EventsListFragment : BaseFragment(R.layout.events_list_screen_layout),
                         }
                     }
                 }
-                eventListAdapter = EventListAdapter(eventList, this@EventsListFragment)
+                if (eventList.isEmpty()) {
+                    binding.eventList.gone()
+                    binding.emptyListMsg.visible()
+                } else {
+                    binding.eventList.visible()
+                    binding.emptyListMsg.gone()
 
-                binding.eventList.apply {
-                    layoutManager = LinearLayoutManager(requireContext())
-                    adapter = eventListAdapter
+                    eventListAdapter = EventListAdapter(eventList, this@EventsListFragment)
+
+                    binding.eventList.apply {
+                        layoutManager = LinearLayoutManager(requireContext())
+                        adapter = eventListAdapter
+                    }
                 }
 
                 Timber.d("$TAG eventList size : ${eventList.size}")
@@ -114,7 +130,11 @@ class EventsListFragment : BaseFragment(R.layout.events_list_screen_layout),
         Timber.d("$TAG onItemClick() called with: item = $item")
 
         Navigation.findNavController(binding.root)
-            .navigate(EventsListFragmentDirections.actionEventsListFragmentToEventDetailsFragment(item))
+            .navigate(
+                EventsListFragmentDirections.actionEventsListFragmentToEventDetailsFragment(
+                    item
+                )
+            )
 //        getLoggedInVolunteerData(position)
     }
 
@@ -188,5 +208,30 @@ class EventsListFragment : BaseFragment(R.layout.events_list_screen_layout),
     override fun onResume() {
         super.onResume()
         (activity as AppCompatActivity).supportActionBar?.title = "Upcoming Events"
+    }
+
+    override fun onCreateOptionsMenu(menu: Menu, inflater: MenuInflater) {
+        inflater.inflate(R.menu.home_menu, menu)
+    }
+
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+        return if (item.itemId == R.id.logout) {
+            performLogout()
+            true
+        } else {
+            super.onOptionsItemSelected(item)
+        }
+    }
+
+    private fun performLogout() {
+        prefs.clearPrefs()
+        restartApp()
+    }
+
+    private fun restartApp() {
+        val mainIntent = Intent(requireActivity(), MainActivity::class.java)
+        mainIntent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK)
+        requireActivity().applicationContext.startActivity(mainIntent)
+        activity?.finish()
     }
 }

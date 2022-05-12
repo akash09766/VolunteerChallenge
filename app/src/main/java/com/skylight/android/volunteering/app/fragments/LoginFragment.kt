@@ -35,7 +35,6 @@ class LoginFragment : BaseFragment(R.layout.login_fragment_layout) {
     @SuppressLint("TimberArgCount")
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-
         binding.volunteerBtn.setOnClickListener {
             performLogin(MConstants.LOGGED_IN_USER_EMAIL_ID)
         }
