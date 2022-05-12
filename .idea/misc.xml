@@ -3,15 +3,69 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
-        <entry key="..\:/Users/KRISHNAPRASAD.CHL/StudioProjects/VolunteerChallenge/app/src/main/res/layout/create_event_fragment_layout.xml" value="0.17708333333333334" />
-        <entry key="..\:/Users/KRISHNAPRASAD.CHL/StudioProjects/VolunteerChallenge/app/src/main/res/layout/speaker_info_layout.xml" value="0.17708333333333334" />
+        <entry key="..\:/Users/AkashPrakashWangalwa/AndroidStudioProjects/interview_tasks/challenge_demo/app/src/main/res/drawable-v24/ic_launcher_foreground.xml" value="0.12" />
+        <entry key="..\:/Users/AkashPrakashWangalwa/AndroidStudioProjects/interview_tasks/challenge_demo/app/src/main/res/drawable-v24/selected_session_list_item_bg.xml" value="0.12" />
+        <entry key="..\:/Users/AkashPrakashWangalwa/AndroidStudioProjects/interview_tasks/challenge_demo/app/src/main/res/drawable-v24/session_list_item_bg.xml" value="0.12" />
+        <entry key="..\:/Users/AkashPrakashWangalwa/AndroidStudioProjects/interview_tasks/challenge_demo/app/src/main/res/drawable/ic_baseline_check_box_outline_blank_24.xml" value="0.1625" />
+        <entry key="..\:/Users/AkashPrakashWangalwa/AndroidStudioProjects/interview_tasks/challenge_demo/app/src/main/res/drawable/ic_baseline_circle_24.xml" value="0.1285" />
+        <entry key="..\:/Users/AkashPrakashWangalwa/AndroidStudioProjects/interview_tasks/challenge_demo/app/src/main/res/drawable/ic_baseline_date.xml" value="0.12" />
+        <entry key="..\:/Users/AkashPrakashWangalwa/AndroidStudioProjects/interview_tasks/challenge_demo/app/src/main/res/drawable/ic_baseline_event.xml" value="0.12" />
+        <entry key="..\:/Users/AkashPrakashWangalwa/AndroidStudioProjects/interview_tasks/challenge_demo/app/src/main/res/drawable/ic_baseline_label.xml" value="0.1285" />
+        <entry key="..\:/Users/AkashPrakashWangalwa/AndroidStudioProjects/interview_tasks/challenge_demo/app/src/main/res/drawable/ic_baseline_language.xml" value="0.12" />
+        <entry key="..\:/Users/AkashPrakashWangalwa/AndroidStudioProjects/interview_tasks/challenge_demo/app/src/main/res/drawable/ic_baseline_location.xml" value="0.12" />
+        <entry key="..\:/Users/AkashPrakashWangalwa/AndroidStudioProjects/interview_tasks/challenge_demo/app/src/main/res/drawable/ic_launcher_background.xml" value="0.12" />
+        <entry key="..\:/Users/AkashPrakashWangalwa/AndroidStudioProjects/interview_tasks/challenge_demo/app/src/main/res/drawable/ic_local_taxi_black.xml" value="0.12" />
+        <entry key="..\:/Users/AkashPrakashWangalwa/AndroidStudioProjects/interview_tasks/challenge_demo/app/src/main/res/drawable/ic_local_taxi_white.xml" value="0.12" />
+        <entry key="..\:/Users/AkashPrakashWangalwa/AndroidStudioProjects/interview_tasks/challenge_demo/app/src/main/res/drawable/list_line_divider.xml" value="0.12" />
+        <entry key="..\:/Users/AkashPrakashWangalwa/AndroidStudioProjects/interview_tasks/challenge_demo/app/src/main/res/drawable/rounded_rectangle_bg.xml" value="0.12" />
+        <entry key="..\:/Users/AkashPrakashWangalwa/AndroidStudioProjects/interview_tasks/challenge_demo/app/src/main/res/drawable/session_list_item_bg.xml" value="0.12" />
+        <entry key="..\:/Users/AkashPrakashWangalwa/AndroidStudioProjects/interview_tasks/challenge_demo/app/src/main/res/drawable/unselected_session_list_item_bg.xml" value="0.1765" />
+        <entry key="..\:/Users/AkashPrakashWangalwa/AndroidStudioProjects/interview_tasks/challenge_demo/app/src/main/res/drawable/vehicle_list_bg.xml" value="0.12" />
+        <entry key="..\:/Users/AkashPrakashWangalwa/AndroidStudioProjects/interview_tasks/challenge_demo/app/src/main/res/layout/activity_main.xml" value="0.1" />
+        <entry key="..\:/Users/AkashPrakashWangalwa/AndroidStudioProjects/interview_tasks/challenge_demo/app/src/main/res/layout/admin_home_screen_layout.xml" value="0.16770833333333332" />
+        <entry key="..\:/Users/AkashPrakashWangalwa/AndroidStudioProjects/interview_tasks/challenge_demo/app/src/main/res/layout/admin_home_screen_list_row_item.xml" value="0.16770833333333332" />
+        <entry key="..\:/Users/AkashPrakashWangalwa/AndroidStudioProjects/interview_tasks/challenge_demo/app/src/main/res/layout/create_event_fragment_layout.xml" value="0.22" />
+        <entry key="..\:/Users/AkashPrakashWangalwa/AndroidStudioProjects/interview_tasks/challenge_demo/app/src/main/res/layout/create_organisation_fragment_layout.xml" value="0.4466666666666667" />
+        <entry key="..\:/Users/AkashPrakashWangalwa/AndroidStudioProjects/interview_tasks/challenge_demo/app/src/main/res/layout/create_volunteer_screen_layout.xml" value="0.22" />
+        <entry key="..\:/Users/AkashPrakashWangalwa/AndroidStudioProjects/interview_tasks/challenge_demo/app/src/main/res/layout/dummy_user_chooser_layout.xml" value="0.22" />
+        <entry key="..\:/Users/AkashPrakashWangalwa/AndroidStudioProjects/interview_tasks/challenge_demo/app/src/main/res/layout/even_list_screen_layout.xml" value="0.16770833333333332" />
+        <entry key="..\:/Users/AkashPrakashWangalwa/AndroidStudioProjects/interview_tasks/challenge_demo/app/src/main/res/layout/event_details_screen_layout.xml" value="0.1872093023255814" />
+        <entry key="..\:/Users/AkashPrakashWangalwa/AndroidStudioProjects/interview_tasks/challenge_demo/app/src/main/res/layout/event_list_row_item.xml" value="0.33902439024390246" />
+        <entry key="..\:/Users/AkashPrakashWangalwa/AndroidStudioProjects/interview_tasks/challenge_demo/app/src/main/res/layout/events_list_screen_layout.xml" value="0.16770833333333332" />
+        <entry key="..\:/Users/AkashPrakashWangalwa/AndroidStudioProjects/interview_tasks/challenge_demo/app/src/main/res/layout/home_screen_fragment_layout.xml" value="0.22" />
+        <entry key="..\:/Users/AkashPrakashWangalwa/AndroidStudioProjects/interview_tasks/challenge_demo/app/src/main/res/layout/login_fragment_layout.xml" value="0.16770833333333332" />
+        <entry key="..\:/Users/AkashPrakashWangalwa/AndroidStudioProjects/interview_tasks/challenge_demo/app/src/main/res/layout/session_details_layout.xml" value="0.3333333333333333" />
+        <entry key="..\:/Users/AkashPrakashWangalwa/AndroidStudioProjects/interview_tasks/challenge_demo/app/src/main/res/layout/session_list_item.xml" value="1.0718232044198894" />
+        <entry key="..\:/Users/AkashPrakashWangalwa/AndroidStudioProjects/interview_tasks/challenge_demo/app/src/main/res/layout/speaker_info_layout.xml" value="0.16770833333333332" />
+        <entry key="..\:/Users/AkashPrakashWangalwa/AndroidStudioProjects/interview_tasks/challenge_demo/app/src/main/res/layout/speaker_list_item.xml" value="0.4466666666666667" />
+        <entry key="..\:/Users/AkashPrakashWangalwa/AndroidStudioProjects/interview_tasks/challenge_demo/app/src/main/res/layout/splash_screen_layout.xml" value="0.16770833333333332" />
+        <entry key="..\:/Users/AkashPrakashWangalwa/AndroidStudioProjects/interview_tasks/challenge_demo/app/src/main/res/menu/home_menu.xml" value="0.16770833333333332" />
+        <entry key="..\:/Users/AkashPrakashWangalwa/AndroidStudioProjects/interview_tasks/free_now/app/src/main/res/drawable/ic_android_black_24dp.xml" value="0.1765" />
+        <entry key="..\:/Users/AkashPrakashWangalwa/AndroidStudioProjects/interview_tasks/free_now/app/src/main/res/drawable/ic_launcher_background.xml" value="0.1765" />
+        <entry key="..\:/Users/AkashPrakashWangalwa/AndroidStudioProjects/interview_tasks/free_now/app/src/main/res/drawable/ic_local_taxi_black.xml" value="0.1765" />
+        <entry key="..\:/Users/AkashPrakashWangalwa/AndroidStudioProjects/interview_tasks/free_now/app/src/main/res/drawable/ic_local_taxi_white.xml" value="0.167" />
+        <entry key="..\:/Users/AkashPrakashWangalwa/AndroidStudioProjects/interview_tasks/free_now/app/src/main/res/drawable/list_line_divider.xml" value="0.1765" />
+        <entry key="..\:/Users/AkashPrakashWangalwa/AndroidStudioProjects/interview_tasks/free_now/app/src/main/res/drawable/vehicle_list_bg.xml" value="0.1765" />
+        <entry key="..\:/Users/AkashPrakashWangalwa/AndroidStudioProjects/interview_tasks/free_now/app/src/main/res/layout/activity_main.xml" value="0.1" />
+        <entry key="..\:/Users/AkashPrakashWangalwa/AndroidStudioProjects/interview_tasks/free_now/app/src/main/res/layout/fragment_maps.xml" value="0.16770833333333332" />
+        <entry key="..\:/Users/AkashPrakashWangalwa/AndroidStudioProjects/interview_tasks/free_now/app/src/main/res/layout/home_screen_fragment_layout.xml" value="0.3333333333333333" />
+        <entry key="..\:/Users/AkashPrakashWangalwa/AndroidStudioProjects/interview_tasks/free_now/app/src/main/res/layout/vehicle_list_row.xml" value="0.33541666666666664" />
+        <entry key="..\:/Users/AkashPrakashWangalwa/AppData/Local/Android/Sdk/platforms/android-31/data/res/layout/simple_dropdown_item_1line.xml" value="0.16770833333333332" />
       </map>
     </option>
   </component>
-  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" default="true" project-jdk-name="Android Studio default JDK" project-jdk-type="JavaSDK">
+  <component name="ExternalStorageConfigurationManager" enabled="true" />
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" default="true" project-jdk-name="11" project-jdk-type="JavaSDK">
     <output url="file://$PROJECT_DIR$/build/classes" />
   </component>
   <component name="ProjectType">
     <option name="id" value="Android" />
+  </component>
+  <component name="VisualizationToolProject">
+    <option name="state">
+      <ProjectState>
+        <option name="scale" value="0.22" />
+      </ProjectState>
+    </option>
   </component>
 </project>
