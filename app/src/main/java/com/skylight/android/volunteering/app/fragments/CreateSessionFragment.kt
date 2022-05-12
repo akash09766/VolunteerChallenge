@@ -13,6 +13,7 @@ import com.skylight.android.volunteering.app.viewModels.HomeScreenViewModel
 import com.skylight.android.volunteering.core.ui.base.BaseFragment
 import com.skylight.android.volunteering.core.utils.getBackStackData
 import com.skylight.android.volunteering.core.utils.getViewModel
+import com.skylight.android.volunteering.core.utils.showLongToast
 import com.skylight.android.volunteering.core.utils.viewBinding
 import com.skylight.android.volunteering.databinding.SessionDetailsLayoutBinding
 import timber.log.Timber
@@ -45,7 +46,10 @@ class CreateSessionFragment : BaseFragment(R.layout.session_details_layout) {
         }
 
         binding.addSessionBtn.setOnClickListener {
-//            val data = (dataCache.get(DataHolderKeys.Events.name) as EventInfo) ?: EventInfo()
+            if(checkInputDataEmpty()){
+                showLongToast("Please Input Details")
+                return@setOnClickListener
+            }
             val data: EventInfo = if ((dataCache.get(DataHolderKeys.Events.name)) == null) {
                 EventInfo()
             } else {
@@ -57,11 +61,11 @@ class CreateSessionFragment : BaseFragment(R.layout.session_details_layout) {
 
             val sessionsItem = SessionsItem()
             sessionsItem.apply {
-                sessionName = binding.sessionTitleEt.text.toString()
-                sessionDate = binding.sessionDateEt.text.toString()
-                sessionTime = binding.sessionTimeEt.text.toString()
-                sessionAddress = binding.sessionAddressEt.text.toString()
-                otherDetails = binding.sessionOtherDetailsEt.text.toString()
+                sessionName = binding.sessionTitleEt.text.toString().trim()
+                sessionDate = binding.sessionDateEt.text.toString().trim()
+                sessionTime = binding.sessionTimeEt.text.toString().trim()
+                sessionAddress = binding.sessionAddressEt.text.toString().trim()
+                otherDetails = binding.sessionOtherDetailsEt.text.toString().trim()
                 sessionSpeakers = speakerList
             }
             sessions?.add(sessionsItem)
@@ -89,7 +93,13 @@ class CreateSessionFragment : BaseFragment(R.layout.session_details_layout) {
         Navigation.findNavController(binding.addSessionBtn).popBackStack()
     }
 
-
+    private fun checkInputDataEmpty(): Boolean{
+        return binding.sessionTitleEt.text.toString().trim().isEmpty() ||
+                binding.sessionDateEt.text.toString().trim().isEmpty() ||
+            binding.sessionTimeEt.text.toString().trim().isEmpty() ||
+        binding.sessionAddressEt.text.toString().trim().isEmpty() ||
+        binding.sessionOtherDetailsEt.text.toString().trim().isEmpty()
+    }
     override fun onResume() {
         super.onResume()
         (activity as AppCompatActivity).supportActionBar?.title = "Add Session"

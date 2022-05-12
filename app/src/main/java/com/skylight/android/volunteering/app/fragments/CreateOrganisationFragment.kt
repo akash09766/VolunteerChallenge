@@ -14,6 +14,7 @@ import com.skylight.android.volunteering.app.viewModels.HomeScreenViewModel
 import com.skylight.android.volunteering.core.ui.base.BaseFragment
 import com.skylight.android.volunteering.core.utils.getViewModel
 import com.skylight.android.volunteering.core.utils.showLongSnackBar
+import com.skylight.android.volunteering.core.utils.showLongToast
 import com.skylight.android.volunteering.core.utils.viewBinding
 import com.skylight.android.volunteering.databinding.CreateOrganisationFragmentLayoutBinding
 import timber.log.Timber
@@ -38,10 +39,22 @@ class CreateOrganisationFragment : BaseFragment(R.layout.create_organisation_fra
         super.onViewCreated(view, savedInstanceState)
 
         binding.createOrgBtn.setOnClickListener {
+            if(checkInputDataEmpty()){
+                showLongToast("Please input Details")
+                return@setOnClickListener
+            }
             getAllOrganisationData(binding.emailEt.text.toString().trim())
         }
     }
 
+    private fun checkInputDataEmpty(): Boolean{
+       return  binding.nameEt.text.toString().trim().isEmpty() ||
+               binding.emailEt.text.toString().trim().isEmpty() ||
+               binding.phoneEt.text.toString().trim().isEmpty() ||
+               binding.cityEt.text.toString().trim().isEmpty() ||
+               binding.addressEt.text.toString().trim().isEmpty()
+
+    }
     private fun getAllOrganisationData(email: String?) {
         val organisationInfo = OrganisationInfo()
         organisationInfo.apply {

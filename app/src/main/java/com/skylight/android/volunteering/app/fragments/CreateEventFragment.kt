@@ -20,6 +20,7 @@ import com.skylight.android.volunteering.app.viewModels.HomeScreenViewModel
 import com.skylight.android.volunteering.core.ui.base.BaseFragment
 import com.skylight.android.volunteering.core.utils.getViewModel
 import com.skylight.android.volunteering.core.utils.showLongSnackBar
+import com.skylight.android.volunteering.core.utils.showLongToast
 import com.skylight.android.volunteering.core.utils.viewBinding
 import com.skylight.android.volunteering.databinding.CreateEventFragmentLayoutBinding
 import timber.log.Timber
@@ -54,6 +55,10 @@ class CreateEventFragment : BaseFragment(R.layout.create_event_fragment_layout) 
         }
 
         binding.createEventBtn.setOnClickListener {
+                    if(checkInputDataNotEmpty()){
+                        showLongToast("Please Input Details")
+                        return@setOnClickListener
+                    }
                    val eventData: EventInfo = if ((dataCache.get(DataHolderKeys.Events.name)) == null) {
                        EventInfo()
                    } else {
@@ -129,6 +134,20 @@ class CreateEventFragment : BaseFragment(R.layout.create_event_fragment_layout) 
         }
     }
 
+    private fun checkInputDataNotEmpty(): Boolean {
+         return binding.eventNameEt.text.toString().trim().isEmpty() ||
+                binding.organisationNameEt.text.toString().trim().isEmpty() ||
+                 binding.eventStartDateEt.text.toString().trim().isEmpty() ||
+                 binding.eventDetailsEt.text.toString().trim().isEmpty() ||
+                 binding.eventModeEt.text.toString().trim().isEmpty() ||
+                 binding.targetAudienceEt.text.toString().trim().isEmpty() ||
+                 binding.ageGroupEt.text.toString().trim().isEmpty() ||
+                 binding.noOfSeatsEt.text.toString().trim().isEmpty() ||
+                 binding.sessionLanguageEt.text.toString().trim().isEmpty() ||
+                 binding.sessionAddressEt.text.toString().trim().isEmpty() ||
+                 binding.sessionPhoneEt.text.toString().trim().isEmpty() ||
+                 binding.sessionEmailEt.text.toString().trim().isEmpty()
+    }
     private fun loadDataFromJson(): EventInfo? {
         var json: String? = null
         json = try {
