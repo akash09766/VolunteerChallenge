@@ -108,10 +108,12 @@ class CreateEventFragment : BaseFragment(R.layout.create_event_fragment_layout) 
                 it.set(orgDocRef, organisationInfoItem!!)
                 Timber.d("$TAG eventItem :$organisationInfoItem")
             }).addOnSuccessListener {
+
                 showLongSnackBar(
                     binding.createEventBtn,
                     getString(R.string.event_created_user_msg)
                 )
+                dataCache.clearCache()
                 Navigation.findNavController(binding.createEventBtn).popBackStack()
                 Timber.d("$TAG Transaction success:")
             }.addOnFailureListener {

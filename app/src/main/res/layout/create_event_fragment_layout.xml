@@ -218,7 +218,7 @@
         <com.google.android.material.textfield.TextInputLayout
             android:id="@+id/session_email_til"
             style="@style/TextFieldStyle"
-            android:hint="email address"
+            android:hint="Email address"
             app:layout_constraintEnd_toEndOf="@id/right_view_guideline"
             app:layout_constraintStart_toStartOf="@id/left_view_guideline"
             app:layout_constraintTop_toBottomOf="@id/session_phone_til">
