@@ -34,6 +34,8 @@
     <string name="volunteer_already_exists_user_msg">Volunteer Already exist.</string>
     <string name="volunteer_unable_to_add_user_msg">Unable to add Volunteer please try after some time.</string>
 
+    <string name="event_created_user_msg">Event Created</string>
+
 <!--    EventsListFragment-->
     <string name="volunteer_registered_already">Volunteered</string>
     <string name="volunteer_yet_to_registered">Volunteer</string>
