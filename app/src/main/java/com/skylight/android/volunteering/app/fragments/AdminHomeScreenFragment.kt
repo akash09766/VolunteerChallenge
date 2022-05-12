@@ -4,6 +4,7 @@ import android.annotation.SuppressLint
 import android.os.Bundle
 import android.util.Log
 import android.view.View
+import androidx.appcompat.app.AppCompatActivity
 import androidx.navigation.Navigation
 import androidx.recyclerview.widget.GridLayoutManager
 import com.google.firebase.Timestamp
@@ -103,5 +104,10 @@ class AdminHomeScreenFragment : BaseFragment(R.layout.admin_home_screen_layout),
     private fun gotoCreateEventFragment() {
         Navigation.findNavController(binding.menuOptions)
             .navigate(AdminHomeScreenFragmentDirections.actionAdminHomeScreenFragmentToCreateEventFragment())
+    }
+
+    override fun onResume() {
+        super.onResume()
+        (activity as AppCompatActivity).supportActionBar?.title = "Home"
     }
 }
